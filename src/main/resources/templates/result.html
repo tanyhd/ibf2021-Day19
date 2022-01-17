@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col" data-th-if="${hero != ''}">
+                <table class="table table-hover">
+                    <ul th:each="list : ${hero}">
+                        <Strong><span th:text="${list.name}"></span></Strong>
+                        <br>
+                        <span th:text="${list.description}"></span>
+                        <br>
+                        <span><img th:src="@{${list.imageUrl} + '/portrait_incredible.jpg'}"></span>
+                    </ul>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
